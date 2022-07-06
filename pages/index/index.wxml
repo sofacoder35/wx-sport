@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<!-- <view class="main-page"> -->
+    <view wx:if="{{!token}}">
+        <span>欢迎使用乡旅助手</span>
+        <van-button type="primary" class="container" custom-class="login" bindtap="login">使用微信账号登录</van-button>
+    </view>
+
+    <view wx:else>
+        <swiper indicator-dots="true" autoplay="true"  interval="5000" duration="500">
+        <block class:slideshow wx:for="{{result}}">
+            <swiper-item>
+            <image src="{{item.imageUrl}}" class="slide-image"/>
+            </swiper-item>
+        </block>
+        </swiper>
+
+        <van-search
+            value="{{ value }}"
+            shape="round"
+            placeholder="请输入搜索关键词"
+            bindtap='To_search'/>
+
+    <view>
+            <scroll-view scroll-y="true">
+                <view wx:for="{{result}}" wx:key="item" id="{{index}}"  bindtap='To_item'>
+                    <van-card            
+                        desc="更新于{{item.createTime}}"
+                        title="{{item.title}}"
+                        thumb="{{ item.imageUrl }}">
+                        <view slot="num"  >
+                        <text style="float: right;">{{item.createName}}</text>
+                        </view>
+                    </van-card>
+                </view>
+            </scroll-view>
+    </view>
+       
+
+    </view>
+

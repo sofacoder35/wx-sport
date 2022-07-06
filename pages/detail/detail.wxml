@@ -1,0 +1,12 @@
+<!-- wxml文件编码原则：
+  先静后动，先样式再数据 -->
+  <image class='head-imagee' src='{{result.data.imageUrl}}'></image>
+  <view class='author-date'>
+    <text class='author'>{{result.data.createName}}</text>
+    <text class='const-text'>发表于</text>
+    <text class='date'>{{result.data.createTime}}</text>
+  </view>
+  <text class='title'>{{result.data.title}}</text>
+  
+  <!-- <rich-text class='detail' nodes="{{result.data.content}}"></rich-text> -->
+  <mp-html content="{{result.data.content}}" class="detail"></mp-html>

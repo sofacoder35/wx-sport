@@ -1,0 +1,23 @@
+<van-search
+            value="{{ value }}"
+            shape="round"
+            placeholder="请输入搜索关键词"
+            bind:search="onSearch"
+            bind:cancel="onCancel"
+            show-action/>
+
+      <view>
+            <scroll-view scroll-y="true">
+                <view wx:for="{{result}}" wx:key="item" id="{{index}}"  bindtap='To_item'>
+                    <van-card            
+                        desc="更新于{{item.createTime}}"
+                        title="{{item.title}}"
+                        thumb="{{ item.imageUrl }}">
+                        <view slot="num">
+                        <text>{{item.createName}}</text>
+                        </view>
+                    </van-card>
+                </view>
+            </scroll-view>
+    </view>
+

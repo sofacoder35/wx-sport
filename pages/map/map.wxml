@@ -1,0 +1,20 @@
+<view class='address' bindtap='onChangeAddress'>
+   <van-field label="目的地" placeholder='请选取目的地' value='{{chooseAddress}}'></van-field>
+  <view wx:if="{{distance!='0'}}">
+  <van-cell-group inset>
+      <van-cell title="距离" value="{{distance}}米" />
+      <van-cell title="时间" value="约{{time}}分钟" />
+  </van-cell-group>
+  </view>
+  </view>
+
+<map id="map" 
+  longitude="{{markers[0].longitude}}" 
+  latitude="{{markers[0].latitude}}" 
+  polyline="{{polyline}}"
+  markers="{{markers}}" 
+  include-points="markers"
+  style="width: 100%;  height: {{view.Height}}px;"></map>
+
+
+

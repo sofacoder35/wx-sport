@@ -1,0 +1,16 @@
+<van-row gutter="20">
+    <van-col span="8" custom-class="avatar-class">
+        <van-image round width="6rem" height="6rem" src="{{ userInfo.avatarUrl }}" />
+    </van-col>
+    <van-col span="10">
+        {{ userInfo.nickName }}
+        <van-icon name="success" />
+        <text>\n\n\n{{ userInfo.address }}</text>
+    </van-col>
+</van-row>
+<text>\n</text>
+<van-cell is-link title="我的收集" link-type="navigateTo" url="/pages/collection/collection" />
+<van-cell is-link title="关于我们" link-type="navigateTo" url="" />
+<van-cell is-link title="在线客服" link-type="navigateTo" url="" />
+<van-dialog id="van-dialog" />
+<button class="logout-btn" bindtap="logout">退出登录</button>

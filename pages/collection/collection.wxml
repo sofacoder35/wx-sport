@@ -1,0 +1,14 @@
+<view>
+            <scroll-view scroll-y="true">
+                <view wx:for="{{result}}" wx:key="item" id="{{item.id}}"  bindtap='To_item'>
+                    <van-card            
+                        desc="收集于{{item.saveTime}}"
+                        title="{{item.plantName}}"
+                        thumb="{{ item.url }}">
+                        <view slot="num">
+                        <van-button type="primary" color="red" size="mini"  id="{{item.id}}"  style="float: right;" bind:click="delete">删除</van-button>
+                        </view>
+                    </van-card>
+                </view>
+            </scroll-view>
+    </view>
